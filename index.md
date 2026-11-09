@@ -4,13 +4,18 @@ title: Datenschutzerklärung – Nuvo Explorer
 
 # Datenschutzerklärung – Nuvo Explorer
 
-Stand: September 2026 · Gilt für die Android- und iOS-App „Nuvo Explorer“.
+Stand: November 2026 · Gilt für die Android- und iOS-App „Nuvo Explorer“.
 
 > **Entwurf:** Die rechtlichen Angaben (Rechtsgrundlagen, Drittlandtransfer, Speicherdauer bei Google) sind nicht
 > anwaltlich geprüft.
 
-**Kurz:** Die App spricht mit dem NAS, das du selbst einträgst. Es gibt keine Werbung und keine Server des
-Entwicklers. Daten gehen in zwei Fällen an Dritte:
+**Kurz:** Die App spricht mit dem NAS, das du selbst einträgst. Es gibt keine Server des Entwicklers. Daten gehen
+in drei Fällen an Dritte:
+
+- **Werbebanner (Google AdMob):** Ganz unten in den Einstellungen zeigt die App einen Werbebanner. Dafür gehen
+  Geräte- und Nutzungsdaten an Google, im EWR, in Großbritannien und der Schweiz erst nach deiner Entscheidung in
+  Googles Einwilligungsdialog. Ändern kannst du sie unter Einstellungen › Werbung › Werbe-Datenschutz (siehe
+  „Werbung“).
 
 - **Nur wenn du zustimmst:** Absturzberichte (Firebase Crashlytics) und eine Nutzungsstatistik (Google Analytics,
   dazu Hinweise über Firebase In-App Messaging) gehen an Google. Google verarbeitet sie auch in den USA. Ohne
@@ -59,7 +64,8 @@ Anmeldungen, Dateizugriffe), bestimmt dein DSM, nicht die App.
 | Benachrichtigungen | Fortschritt von Transfers, Player-Steuerung | beim ersten Transfer bzw. bei der Wiedergabe |
 | Hintergrundausführung | Musik im Hintergrund, Auto-Upload (Android: WorkManager; iOS: vom System geplant) | – |
 
-Standort, Kontakte, Mikrofon oder Werbe-IDs nutzt die App nicht.
+Standort, Kontakte und Mikrofon nutzt die App nicht. Die Werbe-ID liest nur das Werbe-SDK für den Banner (siehe
+„Werbung“).
 
 ## Löschen
 
@@ -113,12 +119,31 @@ gar nicht; es gibt keine Verbindung zu Google.
   App-Update, Gerätemodell, Betriebssystem, Sprache, aus der IP-Adresse abgeleitetes Land bzw. Region – die IP-Adresse
   selbst speichert Google Analytics laut Google nicht),
 - eine zufällige App-Instanz-ID und die Firebase-Installations-ID.
-- Nicht genutzt: Werbe-ID (Android Advertising ID, IDFA), Google Signals, Anzeigenpersonalisierung, Datenfreigabe an
+- Nicht genutzt (für Absturzberichte und Statistik): Werbe-ID (Android Advertising ID, IDFA), Google Signals, Anzeigenpersonalisierung, Datenfreigabe an
   andere Google-Produkte.
 - In-App Messaging lädt mit der Firebase-Installations-ID Hinweise (z. B. auf Updates), die der Entwickler in der
   Firebase-Konsole anlegt, und zeigt sie beim Start an – nie während Anmeldung, 2FA oder Zertifikatsprüfung.
 - Speicherdauer: Analytics-Ereignisse 2 Monate (Einstellung der Property); Firebase-Installations-IDs laut Google, bis
   sie gelöscht werden, danach höchstens 180 Tage in Sicherungen.
+
+## Werbung (Google AdMob)
+
+- Die App zeigt genau einen Werbebanner (so breit wie der Bildschirm), ganz unten in den Einstellungen. Keine Vollbildwerbung, keine
+  Werbung in Dateiliste, Player oder Viewern, keine In-App-Käufe.
+- Anbieter: Google Ireland Limited (Google AdMob, Google Mobile Ads SDK). Google verarbeitet die Daten als
+  eigenständig Verantwortlicher, auch in den USA (EU-U.S. Data Privacy Framework, Standardvertragsklauseln).
+- **Einwilligung:** Im EWR, in Großbritannien und der Schweiz fragt beim App-Start Googles Einwilligungsdialog (User
+  Messaging Platform, IAB-TCF). Erst danach startet das Werbe-SDK und lädt eine Anzeige. Ohne Zustimmung zeigt Google
+  höchstens nicht personalisierte bzw. eingeschränkte Anzeigen. Ändern kannst du deine Wahl jederzeit unter
+  Einstellungen › Werbung › Werbe-Datenschutz. Rechtsgrundlage: Einwilligung (Art. 6 Abs. 1 lit. a DSGVO, § 25 Abs. 1
+  TDDDG).
+- Verarbeitet werden laut Google: Werbe-ID (Android Advertising ID; auf iOS keine IDFA, dort sind Anzeigen nicht
+  personalisiert), IP-Adresse und daraus abgeleiteter ungefährer Standort, Geräte- und App-Informationen (Modell,
+  Betriebssystem, Sprache, App-Version), Interaktionen mit der Anzeige (Einblendung, Tipp) sowie Diagnosedaten des SDK.
+  Zwecke: Anzeigen ausliefern, messen, Betrug verhindern und – mit Einwilligung – personalisieren.
+- Nie an Google: NAS-Adressen, Benutzernamen, Datei- oder Ordnernamen, Inhalte deines NAS.
+- Die Werbe-ID kannst du in den Android-Einstellungen (Datenschutz › Werbung) zurücksetzen oder löschen.
+- Details: [policies.google.com/technologies/partner-sites](https://policies.google.com/technologies/partner-sites).
 
 ## Feedback
 
@@ -159,7 +184,16 @@ Fragen und Hinweise bitte als Issue auf [github.com/jw29435/nuvo-explorer-privac
 
 > **Draft:** the legal statements have not been reviewed by a lawyer.
 
-The app talks to the NAS you configure. There is no advertising and no developer server.
+The app talks to the NAS you configure. There is no developer server.
+
+**Advertising (Google AdMob):** the app shows one banner ad (full width) at the very bottom of the settings page; no
+full-screen ads, no ads in the file list, player or viewers. In the EEA, the UK and Switzerland, Google's consent
+dialog (User Messaging Platform, IAB TCF) asks at app start before the ads SDK starts or loads an ad; you can change
+your choice under Settings › Ads › Ad privacy settings. Google Ireland Limited processes, as an independent
+controller and also in the USA, the advertising ID (Android; no IDFA on iOS, ads there are not personalized), the IP
+address and the approximate location derived from it, device and app information, ad interactions and SDK
+diagnostics, to serve and measure ads, prevent fraud and, with consent, personalize them. Legal basis: consent
+(Art. 6(1)(a) GDPR, Section 25(1) TDDDG). NAS addresses, user names, file names and NAS content never go to Google.
 
 **Only with your consent** (asked once after the first start, never during sign-in, 2FA or certificate checks; both
 options are off by default and can be changed at any time under Settings › Privacy) the app sends crash reports
@@ -170,8 +204,8 @@ contain the stack trace, device model, OS and app version and scrubbed error tex
 user or server names, sessions or tokens), plus app version, build, DSM major version, connection type, theme and app
 language; retention 90 days. Usage statistics contain screen route templates (e.g. “/files/folder”, never file or
 folder names), a few category-only events (see `docs/ANALYTICS.md`) and Google Analytics' automatic events and device
-data; retention 2 months. Both use random installation/instance IDs (pseudonymous, not anonymous). No advertising ID,
-no Google Signals, no ad personalization. Turning usage statistics off resets the analytics data on the device;
+data; retention 2 months. Both use random installation/instance IDs (pseudonymous, not anonymous). Crash reports and
+statistics use no advertising ID, no Google Signals, no ad personalization. Turning usage statistics off resets the analytics data on the device;
 turning crash reports off discards unsent reports.
 
 The other exception is in-app feedback via Wiredash (EU hosting according to the provider): only when you tap “Send feedback” or “Report a
